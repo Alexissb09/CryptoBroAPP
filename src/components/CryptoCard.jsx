@@ -13,20 +13,20 @@ export const CryptoCard = ({ crypto }) => {
         </Card.Body>
         <ListGroup className="list-group-flush">
           <ListGroup.Item>
-            <strong>Price: </strong>
+            <span className="fw-semibold">Price: </span>
             {crypto.DISPLAY.USD.PRICE}
           </ListGroup.Item>
           <ListGroup.Item>
-            <strong>Highest price today: </strong>
+            <span className="fw-semibold">Highest price today: </span>
             {crypto.DISPLAY.USD.HIGHDAY}
           </ListGroup.Item>
           <ListGroup.Item>
-            <strong>Lowest price today: </strong>
+            <span className="fw-semibold">Lowest price today: </span>
             {crypto.DISPLAY.USD.LOWDAY}
           </ListGroup.Item>
           <ListGroup.Item>
-            <strong>Total supply: </strong>
-            {crypto.DISPLAY.USD.SUPPLY}
+          <span className="fw-semibold">Last variation 24hs: </span>
+            {crypto.DISPLAY.USD.CHANGE24HOUR}
           </ListGroup.Item>
         </ListGroup>
       </Card>

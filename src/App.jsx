@@ -9,7 +9,7 @@ function App() {
   const [cryptos, setCryptos] = useState([]);
 
   useEffect(() => {
-    fetch(`https://min-api.cryptocompare.com/data/top/mktcapfull?limit=20&tsym=USD`)
+    fetch(`https://min-api.cryptocompare.com/data/top/totalvolfull?limit=20&tsym=USD`)
       .then((res) => res.json())
       .then((response) => {
         setCryptos(response.Data);
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <Header />
+    <Header />
       <div className="container">
         <Routes>
           <Route path="/" element={<Home cryptos={cryptos} />} />

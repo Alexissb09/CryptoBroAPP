@@ -4,6 +4,7 @@ import { CryptoSelector } from "../components/CryptoSelector";
 import { FiatSelector } from "../components/FiatSelector";
 
 export const Home = ({ cryptos }) => {
+  
   return (
     <div className="d-flex mt-5">
       <Row>

@@ -8,8 +8,9 @@ export const CryptoSelector = ({ cryptos }) => {
     const newCrypto = cryptos.find((crypto) => {
       return e.target.value == crypto.CoinInfo.Name;
     });
-    if (newCrypto) setCrypto(newCrypto);
-
+    if (newCrypto) {
+      setCrypto(newCrypto);
+    }
     console.log(crypto);
   };
 
@@ -22,7 +23,6 @@ export const CryptoSelector = ({ cryptos }) => {
           </option>
         ))}
       </select>
-      {/* <CryptoCard crypto={crypto} /> */}
     </div>
   );
 };

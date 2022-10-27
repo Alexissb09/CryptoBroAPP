@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-
 import { Header } from "./components/Header";
 import { Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react";
+
 import { CryptoLanding } from "./pages/CryptoLanding";
 import { Home } from "./pages/Home";
 
@@ -25,7 +25,7 @@ function App() {
       <div className="p-5">
         <Routes>
           <Route path="/" element={<Home cryptos={cryptos} />} />
-          {/* <Route path="cryptos" element={<CryptoLanding cryptos={cryptos} />} /> */}
+          <Route path="cryptos" element={<CryptoLanding cryptos={cryptos} />} />
         </Routes>
       </div>
     </>

@@ -2,7 +2,6 @@ import { CryptoCard } from "./CryptoCard";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { info } from "sass";
 
 export const Cryptos = ({ cryptos }) => {
   let infoCryptoData;

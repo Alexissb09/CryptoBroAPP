@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { CryptoCard } from "./CryptoCard";
 import { CryptoFiat } from "./CryptoFiat";
 
 export const CryptoSelector = ({ cryptos }) => {
@@ -19,17 +18,19 @@ export const CryptoSelector = ({ cryptos }) => {
 
   return (
     <div className="container">
-      <select className="form-select" onChange={handleChangeCRYPTO}>
-        {cryptos.map((crypto) => (
-          <option key={crypto.CoinInfo.Id} value={crypto.CoinInfo.Name}>
-            {crypto.CoinInfo.Name}
-          </option>
-        ))}
-      </select>
-      <select className="form-select" onChange={handleChangeFIAT}>
-        <option value={"USD"}>USD</option>
-        <option value={"ARS"}>ARS</option>
-      </select>
+      <div className="d-flex justify-content-center mb-3">
+        <select className="form-select me-2" onChange={handleChangeCRYPTO}>
+          {cryptos.map((crypto) => (
+            <option key={crypto.CoinInfo.Id} value={crypto.CoinInfo.Name}>
+              {crypto.CoinInfo.Name}
+            </option>
+          ))}
+        </select>
+        <select className="form-select ms-2" onChange={handleChangeFIAT}>
+          <option value={"USD"}>USD</option>
+          <option value={"ARS"}>ARS</option>
+        </select>
+      </div>
       <div>{crypto ? <CryptoFiat crypto={crypto} isUsd={isUsd} /> : <p>Pick a crypto to see its details</p>}</div>
     </div>
   );

@@ -11,16 +11,12 @@ export const Header = () => {
         </Navbar.Brand>
       </div>
       <Nav className="me-auto">
-        <Nav.Link>
           <Link to="/" className="nav-link">
             Home
           </Link>
-        </Nav.Link>
-        <Nav.Link>
           <Link to="cryptos" className="nav-link">
             Cryptos
           </Link>
-        </Nav.Link>
       </Nav>
     </Navbar>
   );

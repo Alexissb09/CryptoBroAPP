@@ -1,5 +1,6 @@
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import { Spinner } from "react-bootstrap";
 
 export const CryptoCard = ({ crypto, name }) => {
   const img = "https://www.cryptocompare.com";
@@ -7,7 +8,7 @@ export const CryptoCard = ({ crypto, name }) => {
   return (
     <div className="mb-2 d-flex justify-content-center">
       {crypto ? (
-        <Card style={{ width: "19rem" }} className="shadow-lg">
+        <Card style={{ width: "22rem" }} className="shadow-lg">
           <Card.Img variant="top" src={img + crypto.IMAGEURL} />
           <Card.Body>
             <Card.Title>{name}</Card.Title>
@@ -32,7 +33,7 @@ export const CryptoCard = ({ crypto, name }) => {
           </ListGroup>
         </Card>
       ) : (
-        <p>No info crypto</p>
+        <Spinner animation="border" />
       )}
     </div>
   );

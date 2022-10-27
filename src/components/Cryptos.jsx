@@ -8,8 +8,8 @@ export const Cryptos = ({ cryptos }) => {
     <Row>
       {cryptos.map((crypto) => (
         <Col sm className="pb-2">
-          <div key={crypto.CoinInfo.Id}>
-            <CryptoCardTop crypto={crypto} />
+          <div>
+            <CryptoCardTop key={crypto.CoinInfo.Id} crypto={crypto} />
           </div>
         </Col>
       ))}

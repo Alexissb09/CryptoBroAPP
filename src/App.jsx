@@ -1,9 +1,9 @@
-import { Header } from "./components/Header";
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import { CryptoLanding } from "./pages/CryptoLanding";
 import { Home } from "./pages/Home";
+import { Header } from "./components/Header";
 
 export const getSingleCrypto = (coin) => {};
 
@@ -27,6 +27,7 @@ function App() {
           <Route path="cryptos" element={<CryptoLanding cryptos={cryptos} />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 }

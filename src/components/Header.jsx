@@ -7,7 +7,7 @@ export const Header = () => {
     <Navbar bg="dark" variant="dark">
       <div className="ms-2">
         <Navbar.Brand>
-          <img alt="logo" src="../../public/btc.png" width="30" height="30" className="d-inline-block align-top" /> CryptoBro APP
+          <img alt="logo" src="https://www.cryptocompare.com/media/37746251/btc.png" width="30" height="30" className="d-inline-block align-top" /> CryptoBro APP
         </Navbar.Brand>
       </div>
       <Nav className="me-auto">

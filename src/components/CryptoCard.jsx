@@ -1,23 +1,40 @@
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import { Spinner } from "react-bootstrap";
 
-export const CryptoCard = ({ crypto }) => {
+export const CryptoCard = ({ crypto, name }) => {
   const img = "https://www.cryptocompare.com";
 
   return (
     <div className="mb-2 d-flex justify-content-center">
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={img + crypto.CoinInfo.ImageUrl} />
-        <Card.Body>
-          <Card.Title>{crypto.CoinInfo.FullName}</Card.Title>
-        </Card.Body>
-        <ListGroup className="list-group-flush">
-          <ListGroup.Item>Price: {crypto.DISPLAY.USD.PRICE}</ListGroup.Item>
-          <ListGroup.Item>Change last 24hs: {crypto.DISPLAY.USD.CHANGE24HOUR}</ListGroup.Item>
-          <ListGroup.Item>Lowest price today: {crypto.DISPLAY.USD.LOWDAY}</ListGroup.Item>
-          <ListGroup.Item>Total supply: {crypto.DISPLAY.USD.SUPPLY}</ListGroup.Item>
-        </ListGroup>
-      </Card>
+      {crypto ? (
+        <Card style={{ width: "22rem" }} className="shadow-lg">
+          <Card.Img variant="top" src={img + crypto.IMAGEURL} />
+          <Card.Body>
+            <Card.Title>{name}</Card.Title>
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            <ListGroup.Item>
+              <span className="fw-semibold">Price: </span>
+              {crypto.PRICE}
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <span className="fw-semibold">Highest price today: </span>
+              {crypto.HIGHDAY}
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <span className="fw-semibold">Lowest price today: </span>
+              {crypto.LOWDAY}
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <span className="fw-semibold">Last variation 24hs: </span>
+              {crypto.CHANGE24HOUR}
+            </ListGroup.Item>
+          </ListGroup>
+        </Card>
+      ) : (
+        <Spinner animation="border" />
+      )}
     </div>
   );
 };

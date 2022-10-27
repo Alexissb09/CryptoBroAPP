@@ -16,7 +16,7 @@ export const Header = () => {
             Home
           </Link>
         </Nav.Link>
-        <Nav.Link to="/cryptos">
+        <Nav.Link>
           <Link to="cryptos" className="nav-link">
             Cryptos
           </Link>

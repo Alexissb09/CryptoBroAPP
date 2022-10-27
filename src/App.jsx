@@ -5,6 +5,8 @@ import { Route, Routes } from "react-router-dom";
 import { CryptoLanding } from "./pages/CryptoLanding";
 import { Home } from "./pages/Home";
 
+export const getSingleCrypto = (coin) => {};
+
 function App() {
   const [cryptos, setCryptos] = useState([]);
 
@@ -19,11 +21,11 @@ function App() {
 
   return (
     <>
-    <Header />
-      <div className="container">
+      <Header />
+      <div className="p-5">
         <Routes>
           <Route path="/" element={<Home cryptos={cryptos} />} />
-          <Route path="cryptos" element={<CryptoLanding cryptos={cryptos} />} />
+          {/* <Route path="cryptos" element={<CryptoLanding cryptos={cryptos} />} /> */}
         </Routes>
       </div>
     </>

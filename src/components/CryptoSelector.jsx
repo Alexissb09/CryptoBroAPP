@@ -1,21 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { CryptoCard } from "./CryptoCard";
 
 export const CryptoSelector = ({ cryptos }) => {
-  const [crypto, setCrypto] = useState({});
+  const [crypto, setCrypto] = useState();
+  const [isUsd, setIsUsd] = useState(true);
 
   const handleChangeCRYPTO = (e) => {
-    const newCrypto = cryptos.find((crypto) => {
+    const findCrypto = cryptos.find((crypto) => {
       return e.target.value == crypto.CoinInfo.Name;
     });
-    if (newCrypto) {
-      setCrypto(newCrypto);
-    }
-    console.log(crypto);
+    if (findCrypto) setCrypto(findCrypto);
+  };
+
+  console.log(crypto);
+
+  const handleChangeFIAT = (e) => {
+    e.target.value == "USD" ? setIsUsd(true) : setIsUsd(false);
   };
 
   return (
-    <div>
+    <div className="container">
       <select className="form-select" onChange={handleChangeCRYPTO}>
         {cryptos.map((crypto) => (
           <option key={crypto.CoinInfo.Id} value={crypto.CoinInfo.Name}>
@@ -23,6 +27,11 @@ export const CryptoSelector = ({ cryptos }) => {
           </option>
         ))}
       </select>
+      <select className="form-select" onChange={handleChangeFIAT}>
+        <option value={"USD"}>USD</option>
+        <option value={"ARS"}>ARS</option>
+      </select>
+      <div>{crypto ? <CryptoCard crypto={crypto} isUsd={isUsd} /> : <p>Pick a crypto to see its details</p>}</div>
     </div>
   );
 };

@@ -27,7 +27,6 @@ function App() {
           <Route path="cryptos" element={<CryptoLanding cryptos={cryptos} />} />
         </Routes>
       </div>
-      <Footer />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CryptoCard } from "./CryptoCard";
+import { CryptoFiat } from "./CryptoFiat";
 
 export const CryptoSelector = ({ cryptos }) => {
   const [crypto, setCrypto] = useState();
@@ -11,8 +12,6 @@ export const CryptoSelector = ({ cryptos }) => {
     });
     if (findCrypto) setCrypto(findCrypto);
   };
-
-  console.log(crypto);
 
   const handleChangeFIAT = (e) => {
     e.target.value == "USD" ? setIsUsd(true) : setIsUsd(false);
@@ -31,7 +30,7 @@ export const CryptoSelector = ({ cryptos }) => {
         <option value={"USD"}>USD</option>
         <option value={"ARS"}>ARS</option>
       </select>
-      <div>{crypto ? <CryptoCard crypto={crypto} isUsd={isUsd} /> : <p>Pick a crypto to see its details</p>}</div>
+      <div>{crypto ? <CryptoFiat crypto={crypto} isUsd={isUsd} /> : <p>Pick a crypto to see its details</p>}</div>
     </div>
   );
 };

@@ -15,7 +15,6 @@ function App() {
       .then((res) => res.json())
       .then((response) => {
         setCryptos(response.Data);
-        console.log(response.Data);
       });
   }, []);
 

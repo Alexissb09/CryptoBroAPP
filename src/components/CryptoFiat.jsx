@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { getData } from "../utils/getData";
 import { CryptoCard } from "./CryptoCard";
 
-export const CryptoCard = ({ crypto, isUsd = true }) => {
+export const CryptoFiat = ({ crypto, isUsd = true }) => {
   const [info, setInfo] = useState();
 
   useEffect(() => {
@@ -15,13 +15,7 @@ export const CryptoCard = ({ crypto, isUsd = true }) => {
   }, [crypto.CoinInfo.Name]);
 
   const infoCrypto = isUsd ? info?.DISPLAY[`${crypto.CoinInfo.Name}`]?.USD : info?.DISPLAY[`${crypto.CoinInfo.Name}`]?.ARS;
-  const infoCryptoData = {
-    name: crypto.CoinInfo.Name,
-    price: infoCrypto.PRICE,
-    lowday: infoCrypto.LOWDAY,
-    highday: infoCrypto.HIGHDAY,
-    change24hour: infoCrypto.CHANGE24HOUR
-  };
+  const name = crypto.CoinInfo.FullName;
 
-  return <CryptoCard crypto={infoCryptoData} />;
+  return <CryptoCard crypto={infoCrypto} name={name} />;
 };
